@@ -1,0 +1,69 @@
+'''
+    'match': [1st player row, 2nd player row, score row]
+'''
+matches = {
+    'r2_1': [2,6,5],
+    'r2_2': [10,14,13],
+    'r2_3': [18,22,21],
+    'r2_4': [26,30,29],
+    'r2_5': [34,38,37],
+    'r2_6': [42,46,45],
+    'r2_7': [50,54,53],
+    'r2_8': [58,62,61],
+    'qf_1': [4,12,9],
+    'qf_2': [20,28,25],
+    'qf_3': [36,44,41],
+    'qf_4': [52,60,57],
+    'sf_1': [8,24,17],
+    'sf_2': [40,56,49],
+    'f'   : [16,48,33]
+}
+'''
+row:
+2  - r2_1st_name_1
+4  - QF_1st_name_1
+5  - r2_1st_score
+6  - r2_1st_name_2
+8  - SF_1st_name_1
+9  - QF_1st_score
+10 - r2_2nd_name_1
+12 - QF_1st_score
+13 - r2_2nd_score
+14 - r2_2nd_name_2
+16 - F_name_1
+17 - SF_1st_score
+18 - r2_3rd_name_1
+20 - QF_2nd_name_1
+21 - r2_3rd_score
+22 - r2_3rd_name_2
+24 - SF_1nd_name_2
+25 - QF_2nd_score
+26 - r2_4th_name_1
+28 - QF_2nd_name_2
+29 - r2_4th_score
+30 - r2_4th_name_2
+32 - winner_name
+33 - F_score
+34 - r2_5th_name_1
+36 - QF_3rd_name_1
+37 - r2_5th_score 
+38 - r2_5th_name_2 
+40 - SF_2nd_name_1
+41 - QF_3rd_score
+42 - r2_6th_name_1
+44 - QF_3rd_name_2
+45 - r2_6th_score
+46 - r2_6th_name_2
+48 - F_name_2
+49 - SF_2nd_score
+50 - r2_7th_name_1
+52 - QF_4th_name_1
+53 - r2_7th_score
+54 - r2_7th_name_2
+56 - SF_2nd_name_2
+57 - QF_4th_score
+58 - r2_8th_name_1
+60 - QF_4th_name_2
+61 - r2_8th_score
+62 - r2_8th_name_2
+'''
