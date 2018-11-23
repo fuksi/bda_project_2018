@@ -58,5 +58,7 @@ class BwfSpider(scrapy.Spider):
             p1_rank = self.parse_row(tb_rows[p1_row - 1], 'rank')
             p2_rank = self.parse_row(tb_rows[p2_row - 1], 'rank')
             result = self.parse_row(tb_rows[score_row - 1], 'score')
+            winner_rank = self.parse_row(tb_rows[score_row - 2], 'rank')
+            result_direction = 1 if winner_rank == p1_rank else 0
 
-            self.data[match] = [p1_rank, p2_rank, result]
+            self.data[match] = [p1_rank, p2_rank, result, result_direction]
