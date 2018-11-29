@@ -5,7 +5,7 @@ data {
   int y[r, c];
 }
 parameters {
-  simplex[c] theta;
+  simplex[r] theta;
 }
 model {
   for (i in 1:r) {
