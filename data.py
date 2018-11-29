@@ -4,9 +4,9 @@ from scrapy.crawler import CrawlerProcess
 def get_bwf_data():
     categoires = ['ms', 'ws', 'md', 'wd', 'xd']
     tournament_urls = [
-        'https://bwfbadminton.com/results/2650/yonex-all-england-open/draw/',
-        # 'https://bwfworldtour.bwfbadminton.com/tournament/3337/yonex-sunrise-hong-kong-open-2018/results/draw/'
-        # 'https://bwfworldtour.bwfbadminton.com/tournament/3337/yonex-sunrise-hong-kong-open-2018/draw/'
+        # 'https://bwfbadminton.com/results/2650/yonex-all-england-open/draw/',
+        'https://bwfworldtour.bwfbadminton.com/tournament/3337/yonex-sunrise-hong-kong-open-2018/results/draw/',
+        # 'https://bwfbadminton.com/results/2335/yonex-all-england-open/draw/'
     ]
 
     all_tournaments_result = []

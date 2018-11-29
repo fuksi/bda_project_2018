@@ -6,8 +6,11 @@ name = "pypi"
 [packages]
 scrapy = "*"
 "pypiwin32" = "*"
+jupyter = "*"
+ipython = "*"
 
 [dev-packages]
+rope = "*"
 
 [requires]
 python_version = "3.7"
