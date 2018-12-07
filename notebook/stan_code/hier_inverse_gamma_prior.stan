@@ -3,6 +3,8 @@ data {
   int<lower=0> N; 			// Number of observations
   int<lower=0> J; 			// Number of machines
   matrix[N,J] y; 			// N measurements for J machines
+  real<lower=0.1> alpha; //Shape
+  real<lower=0.1> beta; //Scale
 }
 parameters {
   real mu0;				// Common mu for each J machine's mu
@@ -15,7 +17,7 @@ transformed parameters {
   sigma <- sqrt(sigmaSq);
 }
 model {
-  sigmaSq ~ inv_gamma(1, 1);
+  sigmaSq ~ inv_gamma(alpha, beta);
   for (j in 1:J)
     mu[j] ~ normal(mu0, sigma0);	// Model for computing machine specific mu from common mu0 and sigma0
   for (j in 1:J)

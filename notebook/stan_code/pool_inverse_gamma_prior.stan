@@ -1,6 +1,8 @@
 data {
   int<lower=0> N;			// Number of observation
   vector[N] y; 			// N observation for J tournaments
+  real<lower=0.1> alpha; //Shape
+  real<lower=0.1> beta; //Scale
 }
 parameters {
   real mu; // common mean
@@ -11,7 +13,7 @@ transformed parameters {
   sigma <- sqrt(sigmaSq);
 }
 model {
-  sigmaSq ~ inv_gamma(1, 1);
+  sigmaSq ~ inv_gamma(alpha,beta);
   y ~ normal(mu, sigma);
 }
 generated quantities {
