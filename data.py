@@ -12,7 +12,7 @@ def get_bwf_data():
         # 'https://bwfworldtour.bwfbadminton.com/tournament/3150/toyota-thailand-open-2018/results/draw/'
         # 'https://bwfworldtour.bwfbadminton.com/tournament/3151/singapore-open-2018/results/draw/',
         # 'https://bwfworldtour.bwfbadminton.com/tournament/3154/victor-korea-open-2018/results/draw/'
-        # 'https://bwfworldtour.bwfbadminton.com/tournament/3337/yonex-sunrise-hong-kong-open-2018/results/draw/'
+        'https://bwfworldtour.bwfbadminton.com/tournament/3337/yonex-sunrise-hong-kong-open-2018/results/draw/'
     ]
 
     all_tournaments_result = []
@@ -72,12 +72,12 @@ with open('kristel.txt', 'w') as f:
 raw_data = np.loadtxt('kristel.txt')
 
 mat = np.zeros(shape=(23, 6))
-values = np.arange(46, 0, -1)
+values = np.arange(28, 0, -1)
 
 for v in values:
     for c in range(0, 6):
         for r in range(0, 23):
-            if (c+r) == (46-v):
+            if (c+r) == (28-v):
                 mat[r][c] = v
 
 tournament_result = []
