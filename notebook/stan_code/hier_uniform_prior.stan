@@ -1,4 +1,3 @@
-// Gaussian hierarchical model with common std
 data {
   int<lower=0> N; 			// Number of observations
   int<lower=0> J; 			// Number of machines
