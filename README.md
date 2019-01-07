@@ -76,23 +76,7 @@ The dataset is collected from Badminton World Federation (BWF) tournament databa
 show_first_rows_of_data()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -160,19 +144,6 @@ show_summary_of_data()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -263,36 +234,29 @@ We decided to use two different priors:
 
 ## 5 Model
 
-In normal distribution where $\mu$ is known and $\sigma^2$ is unknown, the marginal posterior distribution $p(\sigma^2|y)$ can be computed as described below. The posterior distribution is computed using two different priors, whereas the first is an uniformative (uniform) and the second an informative (inverse gamma) prior.
+In normal distribution where mu is known and sigma is unknown, the marginal posterior distribution p(sigma^2 | y) , can be computed as described below. The posterior distribution is computed using two different priors, whereas the first is an uniformative (uniform) and the second an informative (inverse gamma) prior.
 
 __Priors:__
 
 Uniform prior
 
-\begin{equation*}
-p(\sigma^2) \propto Uniform(0, \infty)
-\end{equation*}
+<img src="uniform_prior.png" alt="uniform_prior" style="width: 35%; margin-left: 0"/>
 
 Inverse gamma prior
 
-\begin{equation*}  
-p(\sigma^2) \propto (\sigma^2)^{-(a+1)}e^{-\beta/\sigma^2} \propto Inv-Gamma(\alpha, \beta) \\
-\end{equation*}
+<img src="invgamma_prior.png" alt="uniform_prior" style="width: 55%; margin-left: 0"/>
 
-where $\alpha=1$ and $\beta=1$ are the shape and scale parameters. Our prior assumption is that variance will be relatively small but we are not sure how small it is, and our guess is around [1,2]. The pdf of inverse gamma with $\alpha=1$ and $\beta=1$ is a good fit for our assumption.
+where α and β are the shape and scale parameters. Our prior assumption is that variance will be relatively small but we are not sure how small it is, and our guess is around [1,2]. The pdf of inverse gamma with α=1 and β=1 is a good fit for our assumption.
 
 __Likelihood:__
-\begin{equation*}
-p(y|\mu,\sigma^2) \propto \prod_{i=1}^{N} p(y_i | \mu, \sigma^2) \propto N(y | \mu, \sigma^2) 
-\end{equation*}
 
-where $\mu$ is known.
+<img src="likelihood.png" alt="uniform_prior" style="width: 55%; margin-left: 0"/>
+
+where mu is known.
 
 __Posterior:__
 
-\begin{equation*}
-p(\sigma^2 | y) \propto p(\sigma^2)p(y|\mu, \sigma^2)
-\end{equation*}
+<img src="posterior.png" alt="uniform_prior" style="width: 35%; margin-left: 0"/>
 
 Since one of the objective is to predict the distribution of a new tournament, we will use pooled and hierarchical model. The separate model is excluded because it handles the tournaments uniquely  without having any common parameters which could be used to predict the new tournament.
 
@@ -366,19 +330,6 @@ print_compact_fit(pool_uni_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -619,19 +570,6 @@ print_compact_fit(pool_inv_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -882,19 +820,6 @@ print_compact_fit(hier_uni_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1106,19 +1031,6 @@ print_compact_fit(hier_uni_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1409,19 +1321,6 @@ print_compact_fit(hier_uni_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1678,19 +1577,6 @@ print_compact_fit(hier_inv_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1916,19 +1802,6 @@ compare_psis_loo(fits=[pool_uni_fit, pool_inv_fit, hier_uni_fit, hier_inv_fit], 
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
